@@ -17,6 +17,17 @@ body, input, button, textarea, select {
   font: 400 1rem "Inter", sans-serif;
 }
 
+@media screen and (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 87.50%;
+  }
+}
+
 button {
   cursor: pointer;
 }
@@ -49,7 +60,7 @@ li {
   background: rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   ::-webkit-scrollbar,
   ::-webkit-scrollbar-thumb,
   ::-webkit-scrollbar-track {
