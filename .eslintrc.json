@@ -47,7 +47,6 @@
     "@typescript-eslint/no-use-before-define": "off",
     "react/jsx-filename-extension": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@next/next/no-img-element": "off",
     "import-helpers/order-imports": [
       "warn",
       {
