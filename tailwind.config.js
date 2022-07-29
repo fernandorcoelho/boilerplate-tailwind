@@ -42,7 +42,22 @@ module.exports = {
       yellow: '#FFC700',
       red: '#FF0000'
     },
-    extend: {}
+    letterSpacing: {
+      normal: 0,
+      wide: '0.1em',
+      wider: '0.15em',
+      widest: '0.33em'
+    },
+    extend: {
+      spacing: {
+        1.5: '0.313rem' /* 5px */,
+        3.5: '0.875rem' /* 14px */,
+        7.5: '1.875rem' /* 30px */
+      },
+      borderWidth: {
+        0.5: '0.5px'
+      }
+    }
   },
   plugins: []
 };

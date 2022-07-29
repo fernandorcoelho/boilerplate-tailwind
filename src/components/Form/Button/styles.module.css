@@ -1,0 +1,11 @@
+.root {
+  @apply px-5 font-bold rounded-lg;
+}
+
+.primary {
+  @apply py-7.5 bg-green-light uppercase tracking-wider text-blue;
+}
+
+.secondary {
+  @apply py-3.5 uppercase tracking-wider text-blue border-0.5 border-blue;
+}

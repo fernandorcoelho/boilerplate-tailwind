@@ -19,7 +19,11 @@ const Componentes = () => {
       <MetaTags title="BRASA - Componentes" />
 
       <div className="flex items-center justify-center w-screen h-screen bg-gray-50">
-        <Button>Teste</Button>
+        <div className="container flex flex-col items-center justify-center gap-4 px-4 py-6 bg-gray-100 rounded-md">
+          <h1 className="text-4xl font-semibold text-blue">Botões</h1>
+          <Button>Variante primary</Button>
+          <Button variant="secondary">Variante secondary</Button>
+        </div>
       </div>
     </>
   );
