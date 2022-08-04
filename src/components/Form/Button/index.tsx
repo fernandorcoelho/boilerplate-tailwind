@@ -1,35 +1,55 @@
-import {
-  ButtonHTMLAttributes,
-  forwardRef,
-  ForwardRefRenderFunction
-} from 'react';
+import React, { useState } from 'react';
+
+import { DeleteIcon, EditIcon, SavedIcon } from 'assets/Icons';
+import { toggleIcon } from 'utils/toggleIcon';
 
 import styles from './styles.module.css';
 
 type ButtonProps = {
-  variant?: 'primary' | 'secondary';
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-const primaryClasses = styles.primary;
-const secondaryClasses = styles.secondary;
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'disable'
+    | 'contact'
+    | 'cancel'
+    | 'update'
+    | 'underline'
+    | 'underlineWhite'
+    | 'save';
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const VariantMap = {
-  primary: primaryClasses,
-  secondary: secondaryClasses
+  primary: styles.primary,
+  secondary: styles.secondary,
+  disable: styles.disable,
+  contact: styles.contact,
+  cancel: styles.cancel,
+  update: styles.update,
+  underline: styles.underline,
+  underlineWhite: styles.underlineWhite,
+  save: styles.save
 };
 
-const ButtonBase: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
-  { children, variant = 'primary', ...rest }: ButtonProps,
-  ref
-) => {
+const ButtonBase: React.ForwardRefRenderFunction<
+  HTMLButtonElement,
+  ButtonProps
+> = ({ children, variant = 'primary', ...rest }: ButtonProps, ref) => {
   const defaultClassName = styles.root;
   const className = [defaultClassName, VariantMap[variant]];
 
+  const [toggledIcon, setToggledIcon] = useState(false);
+
   return (
-    <button className={className.join(' ')} ref={ref} {...rest}>
-      {children}
+    <button
+      className={className.join(' ')}
+      ref={ref}
+      {...rest}
+      onClick={() => toggleIcon(setToggledIcon)}
+    >
+      <span>{children}</span>
+      {!!toggledIcon && variant === 'save' && <SavedIcon />}
     </button>
   );
 };
 
-export const Button = forwardRef(ButtonBase);
+export const Button = React.forwardRef(ButtonBase);

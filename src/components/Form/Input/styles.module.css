@@ -1,0 +1,15 @@
+.root {
+  @apply bg-white pl-2.5 text-cyan-dark;
+}
+
+.label {
+  @apply text-green-lighter text-sm leading-2;
+}
+
+.default {
+  @apply bg-white h-12;
+}
+
+.search {
+  @apply bg-white;
+}

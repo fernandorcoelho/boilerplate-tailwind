@@ -4,8 +4,15 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}'
   ],
+  variants: {
+    extend: {
+      backgroundColor: ['group-hover'],
+      textColor: ['group-hover']
+    }
+  },
   theme: {
     fontSize: {
+      xxs: '.688rem' /* 11px */,
       xs: '.75rem' /* 12px */,
       sm: '.875rem' /* 14px */,
       base: '1rem' /* 16px */,
@@ -14,6 +21,7 @@ module.exports = {
       '4xl': '2.25rem' /* 36px */
     },
     colors: {
+      transparent: 'rgba(0, 0, 0, 0)',
       black: '#000',
       white: '#FFF',
       gray: {
@@ -35,12 +43,17 @@ module.exports = {
         dark: '#012F4E'
       },
       green: {
+        lighter: '#84CD81',
         light: '#72E367',
         base: '#0DC044',
-        dark: '#00BA00'
+        dark: '#00BA00',
+        darker: '#009A00'
       },
       yellow: '#FFC700',
-      red: '#FF0000'
+      red: {
+        base: '#FF0000',
+        dark: '#B90202'
+      }
     },
     letterSpacing: {
       normal: 0,
@@ -48,14 +61,30 @@ module.exports = {
       wider: '0.15em',
       widest: '0.33em'
     },
+    borderWidth: {
+      0.5: '0.5px',
+      1: '1px'
+    },
+    borderRadius: {
+      none: '0px',
+      xs: '4px',
+      sm: '5px',
+      lg: '8px',
+      xl: '20px'
+    },
+    lineHeight: {
+      1: '15px',
+      2: '17px',
+      3: '19px',
+      4: '24px',
+      5: '29px'
+    },
     extend: {
       spacing: {
-        1.5: '0.313rem' /* 5px */,
+        1.25: '0.313rem' /* 5px */,
+        1.5: '0.438rem' /* 7px */,
         3.5: '0.875rem' /* 14px */,
         7.5: '1.875rem' /* 30px */
-      },
-      borderWidth: {
-        0.5: '0.5px'
       }
     }
   },
