@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { DeleteIcon, EditIcon, SavedIcon } from 'assets/Icons';
+import { DeleteIcon, EditIcon, CheckIcon } from 'assets/Icons';
 import { toggleIcon } from 'utils/toggleIcon';
 
 import styles from './styles.module.css';
@@ -47,7 +47,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
       onClick={() => toggleIcon(setToggledIcon)}
     >
       <span>{children}</span>
-      {!!toggledIcon && variant === 'save' && <SavedIcon />}
+      {!!toggledIcon && variant === 'save' && <CheckIcon />}
     </button>
   );
 };
